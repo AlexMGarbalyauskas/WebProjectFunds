@@ -1,0 +1,378 @@
+/*line 1-344 by Domas Brazdeikis x22728815
+
+makes the divs more visible
+used for testing purposes
+#index div{
+  border: 1px solid black;
+}*/
+
+/*theme*/
+body{
+  color: white;
+  background-color: #192269;
+  font-family: calibri;
+  font-size: 30px;
+  padding: 0; /*padding and margin were changed so that divs can take the full width of the page*/
+  margin: 0;
+}
+
+.wrap{
+  width: 100%;
+  margin: auto;
+  overflow: hidden; /*prevent any content being outside the page*/
+}
+
+.title{
+  overflow: auto; /*prevents logo from leaving the div*/
+  text-align: center;
+}
+
+.title > img{
+  float: left;
+  width: 163px;
+  height: 100px;
+}
+
+.title > h1{
+  display: inline;
+  font-family: 'Cinzel', serif; /*custom font*/
+  position: relative; /*changed so I can reposition the text*/
+  top: 10px;  /*adjusted position to look more centered*/
+}
+
+/*title colours*/
+c1{
+  color: #115710;
+}
+
+c2{
+  color: #9c1a10;
+}
+
+.links{
+  display: inline;
+  margin-right: 5%;
+  padding: 1%;
+}
+
+.navbar{
+  text-align: center;
+  padding: 1%;
+  background-color: #424fb3;
+}
+
+.navbar > a{
+  text-decoration: none; /*removes underline*/
+  color: white;
+}
+
+.navbar > a:hover{
+  text-decoration: underline;
+}
+
+.frontImage{
+  height: 500px;
+  width: 100%;
+  margin: auto;
+}
+
+.frontImage > img{
+  width: 100%;
+  height: 100%;
+}
+
+.article1{
+  width: 80%;
+  margin: auto;
+}
+
+.article2{
+  width: 70%;
+  margin: auto;
+}
+
+.article2 > p{
+  text-align: center;
+}
+
+.gallery1{
+
+  height: 600px;
+  background-image: url(../images/gallery1.jpg);
+}
+
+.gallery2{
+  height: 269px;
+  background-image: url(../images/gallery2.jpg);
+}
+
+.gallery3{
+  height: 267px;
+  background-image: url(../images/gallery3.jpg);
+
+}
+
+.gallery4{
+  height: 267px;
+  background-image: url(../images/gallery4.jpg);
+}
+
+.gallery5{
+  height: 267px;
+  background-image: url(../images/gallery5.jpg);
+}
+
+.gAreas{
+  height: 120%;
+  width: 100%;
+  border: 1px solid #00000000 !important; /*!important used to overwrite any other borders applied to the element, used when testing div locations via borders*/
+  background-color: #00000000; /*0 opacity background = transparent*/
+  padding-right: 15px; /*prevents text from going past div*/
+}
+
+.gParas{
+  position: relative; /*animation purposes*/
+  display: none;
+  font-size: 18px;
+  width: 80%;
+}
+
+.galleries{
+  overflow: hidden;
+  cursor: pointer; /*cursor type when hovering over the div*/
+}
+
+/*animations used*/
+@keyframes contrastOn {
+  from {background-color: #00000000;}
+  to {background-color: #00000080;}
+}
+
+@keyframes contrastOff {
+  from {background-color: #00000080;}
+  to {background-color: #00000000;}
+}
+
+@keyframes textOn {
+  from {right: 400px;}
+  to {right: -10px;}
+}
+
+@keyframes textOff {
+  from {right: -10px;}
+  to {right : 400px;}
+}
+
+/*lines 168-184 taken from w3schools with minor adjustments
+https://www.w3schools.com/howto/howto_js_image_grid.asp#gsc.tab=0&gsc.q=css%20important*/
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+  width: 800px;
+  margin: auto;
+}
+
+/* Create two equal columns that sits next to each other */
+.column {
+  flex: 50%;
+  padding: 0 4px;
+}
+
+#alt{ /*used in rwd*/
+  display: none;
+}
+
+.column > div {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+  border: 0 !important;
+}
+
+myHeading{
+  display: block;
+  font-size: 40px;
+}
+
+.gParas > a{
+  text-decoration: underline;
+  color: #00ff44;
+}
+
+.gParas > a:hover{
+  text-decoration: underline;
+}
+
+.footer{
+  width: 100%;
+  padding-left: 10px;
+  background-color: #181b27;
+}
+
+@media screen and (max-width: 780px){
+  .title > h1{
+    font-size: 40px;
+    top: -5px;
+  }
+
+  .frontImage{
+    height: 274px;
+  }
+
+  .frontImage > img{
+    content: url(../images/christmas-tablet.jpg)
+  }
+
+  .row{
+    display: none;
+  }
+
+  #alt{
+    display: block;
+    width: 400px;
+  }
+
+}
+
+@media screen and (max-width: 430px){
+  .title > h1{
+    font-size: 20px;
+    top: -10px;
+  }
+
+  .title > img{
+    display: inline;
+    content: url(../images/logo-rwd.png);
+  }
+
+  .navbar{
+    font-size: 20px;
+  }
+
+  .frontImage{
+    height: 152px;
+  }
+
+  .frontImage > img{
+    content: url(../images/christmas-phone.jpg)
+  }
+
+  .article1{
+    font-size: 20px;
+    width: 100%;
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+
+  .article2{
+    width: 100%;
+  }
+
+}
+
+@media screen and (max-width: 380px){
+  #alt{
+    width: 350px;
+  }
+
+  .gallery1{
+    height: 525px;
+    background-image: url(../images/gallery1-phoneM.jpg);
+  }
+
+  .gallery2{
+    height: 235px;
+    background-image: url(../images/gallery2-phoneM.jpg);
+  }
+
+  .gallery3{
+    height: 233px;
+    background-image: url(../images/gallery3-phoneM.jpg);
+  }
+
+  .gallery4{
+    height: 233px;
+    background-image: url(../images/gallery4-phoneM.jpg);
+  }
+
+  .gallery5{
+    height: 233px;
+    background-image: url(../images/gallery5-phoneM.jpg);
+  }
+
+  .gAreas{
+    padding-right: 10px;
+  }
+
+  myHeading{
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 325px){
+  #alt{
+    width: 300px;
+  }
+}
+
+.gWrapper :not(.footer){
+  text-align: center;
+}
+
+.img1, .img2{
+  width: 112px;
+  height: 112px;
+}
+
+/*lines 333-368 by Evan O Neill x22527456*/
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+.gWrapper{
+  width: 800px;
+    /*height: 7000px; Domas: removed because height too high and not needed, border does not fit the theme*/
+    border: 7px solid #c3c3c3;*/
+    margin: auto;
+}
+
+.gameHeader{
+  font-size: 100px;
+  font-family: 'Roboto Slab', serif;
+}
+
+}
+
+@media screen and (min-device-width : 321px) and (max-device-width : 767px) {
+/*Domas: removed because not needed and causing issues
+ .gWrapper{
+width: 700px;
+/*height: 7000px;
+border: 2px solid #c3c3c3;
+}*/
+
+.gameHeader{
+  font-size: 60px;
+  font-family: 'Roboto Slab', serif;
+}
+}
+
+@media only screen and (max-width : 320px) {
+.gameHeader{
+  /*font-size: 20px;*/
+  font-family: 'Roboto Slab', serif;
+}
+
+}
+
+/*lines 371-378 by Alex Garbalyauskas x22440482*/
+.fWrapper{
+  background-color: #192232;
+  text-align: center;
+  width: 80%;
+  height: 65%;
+  border: 3px solid blue;
+  margin: auto;
+}
