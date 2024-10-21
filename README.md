@@ -1,4 +1,4 @@
-# My first website project
+# My First Website Project
 
 ## Description 
 My first website project that was made in first year alongside Domantas and Sean. It is a simple Christmas charity page with a nice logo that I designed using three "C"s.
